@@ -1,0 +1,210 @@
+/* imports */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* styles */
+:root {
+    --font-size-menu: 30px;
+    --middle-yellow: #fee92bff;
+    --orange-red-crayola: rgb(255, 122, 122);
+    --blue-ncs: #0d89b0ff;
+    --flame: #dc602eff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100%;
+    background: url("../images/background.svg");
+    background-size: cover;
+    text-decoration: none;
+}
+
+.max-width {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+/*------------------------------------- navbar -------------------------------------------*/
+.navbar .max-width {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95vw;
+    height: 150px;
+}
+
+.navbar .logo {
+    width: 250px;
+    margin: 15px 30px;
+}
+
+.navbar .logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.navbar .menu-container {
+    width: 30%;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar .menu-container ul {
+    list-style: none;
+}
+
+.navbar .menu-container ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.navbar .menu-container ul li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: var(--font-size-menu);
+    transition: all 0.3s ease;
+}
+
+.navbar .menu-container ul li a:hover {
+    color: var(--orange-red-crayola);
+}
+
+.navbar .menu-container ul li a::before {
+    content: "";
+    position: absolute;
+    top: -35px;
+    left: -13px;
+    height: 120px;
+    width: 120px;
+    background: url("../images/bubble.png");
+    background-size: cover;
+    opacity: 0%;
+    z-index: -1;
+}
+
+.navbar .menu-container ul li:hover a::before {
+    opacity: 8%;
+    transition: opacity 0.3s ease;
+}
+.navbar .menu-container ul li .contact-link::before {
+    top: -40px;
+    left: -4px;
+    height: 130px;
+    width: 130px;
+}
+
+/*---------------------------------------- home section ----------------------------------------*/
+
+.home {
+    width: 100%;
+    height: calc(100vh - 150px);
+}
+
+.home .home-content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home .home-content .column-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 40%;
+    align-self: center;
+    background: rgba(0, 0, 0, 0.01);
+    border-radius: 30px;
+}
+
+.home .home-content .column-left .home-title {
+    font-size: 80px;
+    font-weight: 700;
+    width: 100%;
+    text-shadow: 1px 1px var(--middle-yellow);
+    padding: 10px 0;
+    color: var(--flame);
+    text-align: center;
+    margin-top: 30px;
+}
+
+.home .home-content .column-left:hover .home-title {
+    animation: shake 0.5s linear;
+    animation-iteration-count: 3;
+}
+
+.home .home-content .column-left p {
+    width: 73%;
+    text-shadow: 1px 1px var(--middle-yellow);
+    text-indent: 25px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: justify;
+    color: var(--orange-red-crayola);
+    padding-top: 30px;
+    line-height: 35px;
+}
+
+.home .home-content .column-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    transform: rotateZ(8deg);
+    overflow: hidden;
+}
+
+.home .home-content .column-right img {
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.home .home-content .column-right img:hover {
+    transform: scale(1.05);
+}
+
+/* ------------------------------- about section -------------------------------------- */
+
+.about {
+    height: 100vh;
+}
+
+.about .about-content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*-------------------------------- Contact Section ------------------------------------------- */
+
+/* ANIMATIONS */
+@keyframes shake {
+    0% {
+    }
+
+    25% {
+        transform: rotateZ(2deg);
+    }
+
+    75% {
+        transform: rotateZ(-2deg);
+    }
+
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
