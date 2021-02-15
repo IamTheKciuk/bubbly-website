@@ -1,5 +1,6 @@
 /* imports */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 /* styles */
 :root {
@@ -15,6 +16,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -106,7 +108,7 @@ body {
 
 .home {
     width: 100%;
-    height: calc(100vh - 150px);
+    min-height: calc(100vh - 150px);
 }
 
 .home .home-content {
@@ -133,11 +135,22 @@ body {
     font-size: 80px;
     font-weight: 700;
     width: 100%;
-    text-shadow: 1px 1px var(--middle-yellow);
+    text-shadow: 3px 3px var(--orange-red-crayola);
     padding: 10px 0;
-    color: var(--flame);
+    color: var(--middle-yellow);
     text-align: center;
     margin-top: 30px;
+    font-family: "Lobster", cursive;
+}
+
+.home .home-content .column-left .home-title span {
+    font-family: "Lobster", cursive;
+    letter-spacing: 10px;
+}
+
+.home .home-content .column-left .home-title span span {
+    display: inline-block;
+    margin-left: -35px;
 }
 
 .home .home-content .column-left:hover .home-title {
@@ -147,12 +160,12 @@ body {
 
 .home .home-content .column-left p {
     width: 73%;
-    text-shadow: 1px 1px var(--middle-yellow);
+    text-shadow: 3px 3px var(--orange-red-crayola);
     text-indent: 25px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 600;
     text-align: justify;
-    color: var(--orange-red-crayola);
+    color: var(--middle-yellow);
     padding-top: 30px;
     line-height: 35px;
 }
@@ -163,35 +176,208 @@ body {
     align-items: center;
     width: 50%;
     transform: rotateZ(8deg);
+    backface-visibility: hidden;
     overflow: hidden;
+    transition: all 0.5s ease;
 }
 
 .home .home-content .column-right img {
     width: 100%;
+    backface-visibility: hidden;
     transition: all 0.5s ease;
 }
-
-.home .home-content .column-right img:hover {
-    transform: scale(1.05);
+.home .home-content .column-right:hover {
+    transform: scale(1.05) rotateZ(8deg);
+    backface-visibility: hidden;
 }
 
 /* ------------------------------- about section -------------------------------------- */
 
-.about {
+.about .max-width .about-content {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
-.about .about-content {
+.about .max-width .about-content .about-us {
+    position: relative;
     display: flex;
-    height: 100%;
-    width: 100%;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    height: 300px;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0) 0px,
+        rgba(0, 0, 0, 0) 10%,
+        var(--middle-yellow) 15%,
+        var(--middle-yellow) 40%,
+        rgb(87, 255, 247) 60%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    margin-bottom: 100px;
+}
+
+.about .about-content .about-us .img-wrapper {
+    position: absolute;
+    left: 0;
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    border: 15px solid var(--middle-yellow);
+    background: black;
+    overflow: hidden;
+}
+
+.about .about-content .about-us .img-wrapper img {
+    position: absolute;
+    height: 350px;
+    left: -45px;
+}
+
+.about .max-width .about-content .about-us .about-us-desc {
+    width: 70%;
+}
+
+.about .max-width .about-content .about-us .about-us-desc .about-us-title {
+    font-size: 50px;
+    color: var(--orange-red-crayola);
+}
+
+.about .max-width .about-content .about-us .about-us-desc p {
+    font-size: 1rem;
+    color: black;
+}
+
+.about .max-width .about-content .about-tea {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 300px;
+    background: linear-gradient(
+        -90deg,
+        rgba(0, 0, 0, 0) 0px,
+        rgba(0, 0, 0, 0) 10%,
+        var(--middle-yellow) 15%,
+        var(--middle-yellow) 40%,
+        rgb(87, 255, 247) 60%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+
+.about .about-content .about-tea .img-wrapper {
+    position: absolute;
+    right: 0;
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    border: 15px solid var(--middle-yellow);
+    background: black;
+    overflow: hidden;
+}
+
+.about .about-content .about-tea .img-wrapper img {
+    position: absolute;
+    width: 350px;
+    top: -120px;
+}
+
+.about .max-width .about-content .about-tea .about-tea-desc {
+    width: 70%;
+}
+
+.about .max-width .about-content .about-tea .about-tea-desc .about-tea-title {
+    text-align: end;
+    font-size: 50px;
+    color: var(--orange-red-crayola);
 }
 
 /*-------------------------------- Contact Section ------------------------------------------- */
 
-/* ANIMATIONS */
+.contact .max-width .contact-content {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact .max-width .contact-content .column-left {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .max-width .contact-content .column-left h2 {
+    text-align: center;
+    color: var(--middle-yellow);
+    font-size: 50px;
+    text-shadow: 1px 1px var(--orange-red-crayola);
+    margin-bottom: 30px;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.contact .max-width .contact-content .column-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    height: 100%;
+    width: 50%;
+}
+
+.contact .max-width .contact-content .column-right h2 {
+    text-align: center;
+    font-size: 50px;
+    color: var(--middle-yellow);
+    text-shadow: 1px 1px var(--orange-red-crayola);
+    margin-bottom: 30px;
+    padding-bottom: 135px;
+}
+
+.contact .max-width .contact-content .column-right .icons {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact .max-width .contact-content .column-right .icons .row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.contact .max-width .contact-content .column-right .icons .row i{
+    font-size: 40px;
+    margin-right: 20px;
+    color: var(--middle-yellow);
+}
+
+.contact .max-width .contact-content .column-right .icons .row .info .head {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--middle-yellow);
+    text-shadow: 1px px var(--orange-red-crayola);
+}
+
+.contact .max-width .contact-content .column-right .icons .row .info .subtitle {
+    font-size: 20px;
+    color: var(--orange-red-crayola);
+    text-shadow: 1px 1px var(--middle-yellow);
+}
+
+/* __________________________ANIMATIONS___________________________________ */
 @keyframes shake {
     0% {
     }
