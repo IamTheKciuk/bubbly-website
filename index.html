@@ -16,6 +16,24 @@
         <script src="./scripts/script.js"></script>
     </head>
     <body>
+        <!-- social icons -->
+        <div class="social-container">
+            <a href="https://facebook.com" class="social-icon" target="blank"
+                ><i class="fab fa-facebook-square"></i
+            ></a>
+            <a href="https://instagram.com" class="social-icon" target="blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" class="social-icon" target="blank"
+                ><i class="fab fa-twitter-square"></i
+            ></a>
+        </div>
+
+        <!-- go Top Button -->
+        <div class="goTopBtn">
+            <a href="#">
+                <i class="fas fa-caret-square-up"></i>
+            </a>
+        </div>
+
         <!-- navbar -->
         <nav class="navbar">
             <div class="max-width">
@@ -65,7 +83,7 @@
         <section class="about" id="about">
             <div class="max-width">
                 <div class="about-content">
-                    <div class="about-us">
+                    <div class="about-us slide-module" id="about-us">
                         <div class="img-wrapper">
                             <img src="./images/about-us.jpg" alt="" />
                         </div>
@@ -80,7 +98,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="about-tea">
+                    <div class="about-tea slide-module" id="about-tea">
                         <div class="about-tea-desc">
                             <h2 class="about-tea-title">What is bubbly?</h2>
                             <p>
@@ -102,11 +120,11 @@
         <section class="contact" id="contact">
             <div class="max-width">
                 <div class="contact-content">
-                    <div class="column-left">
+                    <div class="column-left slide-module">
                         <h2>Find us here</h2>
                         <div id="map"></div>
                     </div>
-                    <div class="column-right">
+                    <div class="column-right slide-module">
                         <h2>Contact us</h2>
                         <div class="icons">
                             <div class="row">
@@ -142,8 +160,8 @@
         </section>
 
         <script
-        async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlPsbP2Ixd0awiTmFzFQawAvFNSWJpfS4&callback=initMap"
-    ></script>
+            async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlPsbP2Ixd0awiTmFzFQawAvFNSWJpfS4&callback=initMap"
+        ></script>
     </body>
 </html>

@@ -31,6 +31,55 @@ body {
     margin: 0 auto;
 }
 
+/* social icons */
+
+.social-container {
+    position: fixed;
+    bottom: 0;
+    left: 10px;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+.social-container .social-icon {
+    color: lightgray;
+    font-size: 35px;
+    transition: all 0.3s ease;
+}
+
+.social-container .social-icon:hover {
+    color: var(--middle-yellow);
+    transform: scale(1.2);
+}
+
+/* go Top Button */
+.goTopBtn{
+    opacity: 0;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.sticky{
+    opacity: 1;
+}
+
+.goTopBtn i{
+    font-size: 50px;
+    color: var(--middle-yellow);
+    transition: all 0.3s ease;
+}
+
+.goTopBtn:hover i{
+    color: var(--orange-red-crayola);
+    cursor: pointer;
+}
+
 /*------------------------------------- navbar -------------------------------------------*/
 .navbar .max-width {
     display: flex;
@@ -78,30 +127,6 @@ body {
 
 .navbar .menu-container ul li a:hover {
     color: var(--orange-red-crayola);
-}
-
-.navbar .menu-container ul li a::before {
-    content: "";
-    position: absolute;
-    top: -35px;
-    left: -13px;
-    height: 120px;
-    width: 120px;
-    background: url("../images/bubble.png");
-    background-size: cover;
-    opacity: 0%;
-    z-index: -1;
-}
-
-.navbar .menu-container ul li:hover a::before {
-    opacity: 8%;
-    transition: opacity 0.3s ease;
-}
-.navbar .menu-container ul li .contact-link::before {
-    top: -40px;
-    left: -4px;
-    height: 130px;
-    width: 130px;
 }
 
 /*---------------------------------------- home section ----------------------------------------*/
@@ -164,7 +189,7 @@ body {
 
 .home .home-content .column-left p {
     width: 73%;
-    text-shadow: 3px 3px var(--orange-red-crayola);
+    text-shadow: 2px 2px var(--orange-red-crayola);
     text-indent: 25px;
     font-size: 25px;
     font-weight: 600;
@@ -204,6 +229,7 @@ body {
     width: 100%;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .about .max-width .about-content .about-us {
@@ -303,10 +329,11 @@ body {
 
 .contact .max-width .contact-content {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     justify-content: space-around;
     align-items: center;
+    overflow: hidden;
 }
 
 .contact .max-width .contact-content .column-left {
@@ -386,6 +413,14 @@ body {
 @media (max-width: 1350px) {
     .max-width {
         width: 1000px;
+    }
+
+    .social-container {
+        width: 130px;
+    }
+
+    .social-container .social-icon {
+        font-size: 30px;
     }
 
     .navbar .menu-container ul li a {
@@ -543,6 +578,14 @@ body {
         width: 650px;
     }
 
+    .social-container {
+        width: 100px;
+    }
+
+    .social-container .social-icon {
+        font-size: 25px;
+    }
+
     .navbar .menu-container ul li a {
         font-size: calc(var(--font-size-menu) - 8px);
     }
@@ -553,6 +596,16 @@ body {
 
     .home .home-content .column-left .home-title {
         font-size: 50px;
+    }
+
+    .home .home-content .column-left .home-title span {
+        font-family: "Lobster", cursive;
+        letter-spacing: 8px;
+    }
+
+    .home .home-content .column-left .home-title span span {
+        display: inline-block;
+        margin-left: -25px;
     }
 
     .home .home-content .column-left p {
@@ -653,6 +706,10 @@ body {
         width: 550px;
     }
 
+    .goTopBtn i{
+        font-size: 40px;
+    }
+
     .navbar .menu-container ul li a {
         font-size: calc(var(--font-size-menu) - 9px);
     }
@@ -702,6 +759,7 @@ body {
 
     .contact .max-width .contact-content .column-left {
         width: 100%;
+        margin-bottom: 20px;
     }
 
     #map {
@@ -711,6 +769,7 @@ body {
 
     .contact .max-width .contact-content .column-right {
         width: 100%;
+        margin-bottom: 30px;
     }
 
     .contact .max-width .contact-content .column-right .icons .row i {
@@ -738,6 +797,14 @@ body {
         width: 440px;
     }
 
+    .social-container {
+        width: 70px;
+    }
+
+    .social-container .social-icon {
+        font-size: 18px;
+    }
+
     .navbar .logo {
         width: 190px;
         margin: 0 0;
@@ -763,6 +830,16 @@ body {
     .home .home-content .column-left p {
         font-size: 10px;
         line-height: 20px;
+    }
+
+    .home .home-content .column-left .home-title span {
+        font-family: "Lobster", cursive;
+        letter-spacing: 6px;
+    }
+
+    .home .home-content .column-left .home-title span span {
+        display: inline-block;
+        margin-left: -16px;
     }
 
     .about .max-width .about-content .about-us {
@@ -878,6 +955,10 @@ body {
         width: 320px;
     }
 
+    .goTopBtn i{
+        font-size: 35px;
+    }
+
     .navbar .max-width {
         height: 80px;
     }
@@ -991,9 +1072,26 @@ body {
     }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 355px) {
     .max-width {
         width: 280px;
+    }
+
+    .goTopBtn i{
+        font-size: 30px;
+    }
+
+    .social-container {
+        width: 65px;
+    }
+
+    .social-container .social-icon {
+        font-size: 16px;
+    }
+
+    .social-container .social-icon:hover {
+        color: var(--middle-yellow);
+        transform: scale(1.2);
     }
 
     .home .home-content .column-left .home-title {
@@ -1035,11 +1133,86 @@ body {
         font-size: 7px;
     }
 
-
     #map {
         width: 70%;
         height: 220px;
     }
+}
+
+@media (max-height: 770px) {
+    section {
+        margin-bottom: 100px;
+    }
+
+    .contact {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-height: 500px) {
+    section {
+        margin-bottom: 150px;
+    }
+
+    .contact {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-height: 450px) {
+    section {
+        margin-bottom: 200px;
+    }
+
+    .navbar {
+        margin-bottom: 100px;
+    }
+
+    .contact {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-height: 320px) {
+    section {
+        margin-bottom: 250px;
+    }
+
+    .navbar {
+        margin-bottom: 100px;
+    }
+
+    .contact {
+        margin-bottom: 0;
+    }
+}
+
+/* SLIDE IN */
+
+.slide-module {
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.about-us {
+    transform: translateX(50%);
+}
+
+.about-tea {
+    transform: translateX(-50%);
+}
+
+.contact-content .column-left {
+    transform: translateX(-100%);
+}
+
+.contact-content .column-right {
+    transform: translateX(100%);
+}
+
+.slide-module.active {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* __________________________ANIMATIONS___________________________________ */
